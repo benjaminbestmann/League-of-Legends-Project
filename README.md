@@ -34,6 +34,7 @@ The steps we took in cleaning our data consisted of first selecting our relevent
 Firstly, we selected our columns by passing in a list of the columns above. This helped us immensly in pinpointing the exact columns that we needed to answer our question. Once we selected these, we first began by querying out the position of 'team.' This is due to the fact that our particular analysis focuses on individidual performance rather than team effort. Additionally, we also edited the gamelength column by dividing it by 60 to  convert it from seconds to minutes; this was particularly useful in obtaining another column called damagemitigated by multiplying the gamelength column by the damagemitigatedperminute column. Lastly, we replaced all 0.0s with 1s in the deaths column so that we could create a new column called KDA (the Kill, Death, and Assist ratio); KDA serves as an aggregate statistic useful for finding the "best" player on either team. 
 
 ## Cleaned Dataframe (first few rows):
+
 | gameid                |   url | datacompleteness   |   gamelength | position   |   total cs |   result |   kills |   deaths |   assists |   damagetochampions |   earnedgold |   visionscore |   damagemitigated |     KDA |
 |:----------------------|------:|:-------------------|-------------:|:-----------|-----------:|---------:|--------:|---------:|----------:|--------------------:|-------------:|--------------:|------------------:|--------:|
 | ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | top        |        231 |        0 |       2 |        3 |         2 |               15768 |         7164 |            26 |             22206 | 1.33333 |
@@ -41,6 +42,7 @@ Firstly, we selected our columns by passing in a list of the columns above. This
 | ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | mid        |        193 |        0 |       2 |        2 |         3 |               14258 |         5945 |            29 |              6503 | 2.5     |
 | ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | bot        |        226 |        0 |       2 |        4 |         2 |               11106 |         6835 |            25 |              6249 | 1       |
 | ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | sup        |         42 |        0 |       1 |        5 |         6 |                3663 |         2908 |            69 |             13993 | 1.4     |
+
 
 
 ## Univariate Analysis
