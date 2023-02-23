@@ -34,7 +34,13 @@ The steps we took in cleaning our data consisted of first selecting our relevent
 Firstly, we selected our columns by passing in a list of the columns above. This helped us immensly in pinpointing the exact columns that we needed to answer our question. Once we selected these, we first began by querying out the position of 'team.' This is due to the fact that our particular analysis focuses on individidual performance rather than team effort. Additionally, we also edited the gamelength column by dividing it by 60 to  convert it from seconds to minutes; this was particularly useful in obtaining another column called damagemitigated by multiplying the gamelength column by the damagemitigatedperminute column. Lastly, we replaced all 0.0s with 1s in the deaths column so that we could create a new column called KDA (the Kill, Death, and Assist ratio); KDA serves as an aggregate statistic useful for finding the "best" player on either team. 
 
 ## Cleaned Dataframe (first few rows):
-`relavent.head().to_markdown(index=False)`
+| gameid                |   url | datacompleteness   |   gamelength | position   |   total cs |   result |   kills |   deaths |   assists |   damagetochampions |   earnedgold |   visionscore |   damagemitigated |     KDA |
+|:----------------------|------:|:-------------------|-------------:|:-----------|-----------:|---------:|--------:|---------:|----------:|--------------------:|-------------:|--------------:|------------------:|--------:|
+| ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | top        |        231 |        0 |       2 |        3 |         2 |               15768 |         7164 |            26 |             22206 | 1.33333 |
+| ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | jng        |        148 |        0 |       2 |        5 |         6 |               11765 |         5368 |            48 |             18562 | 1.6     |
+| ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | mid        |        193 |        0 |       2 |        2 |         3 |               14258 |         5945 |            29 |              6503 | 2.5     |
+| ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | bot        |        226 |        0 |       2 |        4 |         2 |               11106 |         6835 |            25 |              6249 | 1       |
+| ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | sup        |         42 |        0 |       1 |        5 |         6 |                3663 |         2908 |            69 |             13993 | 1.4     |
 
 
 ## Univariate Analysis
@@ -60,13 +66,14 @@ This further supports our manner for selecting the best player as statistics lik
 
 ### Intersting Aggregates
 
-| gameid                |   url | datacompleteness   |   gamelength | position   |   total cs |   result |   kills |   deaths |   assists |   damagetochampions |   earnedgold |   visionscore |   damagemitigated |     KDA |
-|:----------------------|------:|:-------------------|-------------:|:-----------|-----------:|---------:|--------:|---------:|----------:|--------------------:|-------------:|--------------:|------------------:|--------:|
-| ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | top        |        231 |        0 |       2 |        3 |         2 |               15768 |         7164 |            26 |             22206 | 1.33333 |
-| ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | jng        |        148 |        0 |       2 |        5 |         6 |               11765 |         5368 |            48 |             18562 | 1.6     |
-| ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | mid        |        193 |        0 |       2 |        2 |         3 |               14258 |         5945 |            29 |              6503 | 2.5     |
-| ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | bot        |        226 |        0 |       2 |        4 |         2 |               11106 |         6835 |            25 |              6249 | 1       |
-| ESPORTSTMNT01_2690210 |   nan | complete           |        28.55 | sup        |         42 |        0 |       1 |        5 |         6 |                3663 |         2908 |            69 |             13993 | 1.4     |
+|     KDA |   visionscore |   earnedgold |   damagetochampions |   total cs |   damagemitigated |
+|--------:|--------------:|-------------:|--------------------:|-----------:|------------------:|
+| 58.8333 |           402 |        61987 |              136472 |       1816 |            149518 |
+| 58.8333 |           402 |        61987 |              136472 |       1816 |            149518 |
+| 58.8333 |           402 |        61987 |              136472 |       1816 |            149518 |
+| 58.8333 |           402 |        61987 |              136472 |       1816 |            149518 |
+| 58.8333 |           402 |        61987 |              136472 |       1816 |            149518 |
+
 
 By grouping our cleaned dataframe by gameid (i.e match), we can utilize a transformation in order to get the sum of 'gameid','KDA', 'visionscore','earnedgold','damagetochampions', 'total cs', and 'damagemitigated' columns in each row. This helps us in optaining our aggregate statistic  MVPscore which is a new column optained by utilizing the grouped df (called match_sums) in order to turn the rows in the columns mentioned to proportions of theior performance per game. Using this, we calculate MVPscore by taking summing 10% of KDA, 20% DTC, 20% Earned Gold, 35% Vision Score, 15% Damage Mitigated, and 10% Total cs.
 
