@@ -34,8 +34,7 @@ The steps we took in cleaning our data consisted of first selecting our relevent
 Firstly, we selected our columns by passing in a list of the columns above. This helped us immensly in pinpointing the exact columns that we needed to answer our question. Once we selected these, we first began by querying out the position of 'team.' This is due to the fact that our particular analysis focuses on individidual performance rather than team effort. Additionally, we also edited the gamelength column by dividing it by 60 to  convert it from seconds to minutes; this was particularly useful in obtaining another column called damagemitigated by multiplying the gamelength column by the damagemitigatedperminute column. Lastly, we replaced all 0.0s with 1s in the deaths column so that we could create a new column called KDA (the Kill, Death, and Assist ratio); KDA serves as an aggregate statistic useful for finding the "best" player on either team. 
 
 ### Cleaned Dataframe (first few rows):
-    STILL GOT TO DO
-    print(relavent.head().to_markdown(index=False))
+`print(relavent.head().to_markdown(index=False))`
 
 
 ## Univariate Analysis
@@ -61,7 +60,7 @@ This further supports our manner for selecting the best player as statistics lik
 
 ### Intersting Aggregates
 
-NEED TO PUT THE MATCH_SUMS DF
+`print(match_sums.to_markdown(index=False))`
 
 By grouping our cleaned dataframe by gameid (i.e match), we can utilize a transformation in order to get the sum of 'gameid','KDA', 'visionscore','earnedgold','damagetochampions', 'total cs', and 'damagemitigated' columns in each row. This helps us in optaining our aggregate statistic  MVPscore which is a new column optained by utilizing the grouped df (called match_sums) in order to turn the rows in the columns mentioned to proportions of theior performance per game. Using this, we calculate MVPscore by taking summing 10% of KDA, 20% DTC, 20% Earned Gold, 35% Vision Score, 15% Damage Mitigated, and 10% Total cs.
 
@@ -99,7 +98,7 @@ In this case, our hypothesis would be:
 <iframe src="assets/empdis.html" width=800 height=600 frameBorder=0></iframe>
 - Observed Test Statistic = 0.00001318771
 
-The result of this test was also surprising as the p-value was 0.989 which means we do not have enough evidence to reject the notion that result is independent of url missingness. This was interesting as it seems consistent for the url to match data to be missing dependent on if the result was a loss or a win.
+The result of this test was also surprising as the p-value was 0.989 which means we do not have enough evidence to reject the notion that result is independent of url missingness. This was interesting as it seems consistent for the url to match data to be missing dependent on if the result was a loss or a win (perhaps heinous characters at play).
 
 # Hypothesis Testing
 
@@ -113,11 +112,14 @@ In this case, our hypothesis were:
 - Alternative: The 'best' player is more likely to be on the winning team
 
 ### Empirical Distribution and Observed Statistic (MVP)
-<iframe src="assets/hypo.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/Hypo.html" width=800 height=600 frameBorder=0></iframe>
 - Observed Test Statistic = 0.9412947326095698
 
+As can be ascertained from the above graph, the p-value was low; as a matter of fact, it was 0! This means that we can reject the null that the best player is likely to be on either side as our observation (the proportion of best player being on the winning team) is not consistent with said null.
 
-As can be ascertained from the above graph, the p-value was low; as a matter of fact, it was 0! This means that we can reject the null that the best player is likely to be on either side. Note: we cannot prove that the best player  
+
+# Conclusion
+
 
 
 
