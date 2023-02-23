@@ -34,7 +34,7 @@ The steps we took in cleaning our data consisted of first selecting our relevent
 Firstly, we selected our columns by passing in a list of the columns above. This helped us immensly in pinpointing the exact columns that we needed to answer our question. Once we selected these, we first began by querying out the position of 'team.' This is due to the fact that our particular analysis focuses on individidual performance rather than team effort. Additionally, we also edited the gamelength column by dividing it by 60 to  convert it from seconds to minutes; this was particularly useful in obtaining another column called damagemitigated by multiplying the gamelength column by the damagemitigatedperminute column. Lastly, we replaced all 0.0s with 1s in the deaths column so that we could create a new column called KDA (the Kill, Death, and Assist ratio); KDA serves as an aggregate statistic useful for finding the "best" player on either team. 
 
 ## Cleaned Dataframe (first few rows):
-print(relavent.head().to_markdown(index=False))
+`print(relavent.head().to_markdown(index=False))`
 
 
 ## Univariate Analysis
@@ -60,7 +60,7 @@ This further supports our manner for selecting the best player as statistics lik
 
 ### Intersting Aggregates
 
-print(match_sums.to_markdown(index=False))
+`print(match_sums.to_markdown(index=False))`
 
 By grouping our cleaned dataframe by gameid (i.e match), we can utilize a transformation in order to get the sum of 'gameid','KDA', 'visionscore','earnedgold','damagetochampions', 'total cs', and 'damagemitigated' columns in each row. This helps us in optaining our aggregate statistic  MVPscore which is a new column optained by utilizing the grouped df (called match_sums) in order to turn the rows in the columns mentioned to proportions of theior performance per game. Using this, we calculate MVPscore by taking summing 10% of KDA, 20% DTC, 20% Earned Gold, 35% Vision Score, 15% Damage Mitigated, and 10% Total cs.
 
