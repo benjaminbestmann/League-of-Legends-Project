@@ -1,5 +1,4 @@
-# League-of-Legends-Project
-Project 3 for DSC 80
+# League of Legends Game Analysis
 
 ### Here we are trying to answer the question: is the "best" player in any given game, on the winning side?
 
