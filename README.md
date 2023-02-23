@@ -10,6 +10,8 @@ We are utilizing a large data set of competitive match data from the 2022 season
 
     - gameid: The specific id for each game (there are over 10,000!)
     - url: The link to the match summery data
+    - gamelength: The length of a game (in seconds)
+    - position: The position of a player on the team (could also be Teamm if something is considered a combined effort)
     - datacompleteness: Whether the data in the row is complete or missing
     - total cs: The total amount of non-player entities killed
     - result: The result of the match, 1 is win, 0 is loss
@@ -26,6 +28,20 @@ Answering this question is important as it highlights indivual performance and e
 
 # Cleaning and EDA
 The steps we took in cleaning our data consisted of first selecting our relevent columns and proceeding to clean those. 
+
+Firstly, we selected our columns by passing in a list of the columns above. This helped us immensly in pinpointing the exact columns that we needed to answer our question. Once we selected these, we first began by querying out the position of 'team.' This is due to the fact that our particular analysis focuses on individidual performance rather than team effort. Additionally, we also edited the gamelength column by dividing it by 60 to  convert it from seconds to minutes; this was particularly useful in obtaining another column called damagemitigated by multiplying the gamelength column by the damagemitigatedperminute column. Lastly, we replaced all 0.0s with 1s in the deaths column so that we could create a new column called KDA (the Kill, Death, and Assist ratio); KDA serves as an aggregate statistic useful for finding the "best" player on either team. 
+
+### Cleaned Dataframe:
+    NEED TO PUT
+
+## Univariate Analysis
+
+
+
+
+
+
+Describe, in detail, the data cleaning steps you took and how they affected your analyses. The steps should be explained in reference to the data generating process. Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 
 
 # Assessment of Missingness
