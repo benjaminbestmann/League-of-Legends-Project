@@ -50,21 +50,21 @@ Firstly, we selected our columns by passing in a list of the columns above. This
 ### KDA analysis:
 <iframe src="assets/KDA.html" width=800 height=600 frameBorder=0></iframe>
 
-The above graph showcases the distributions of KDA in matches won (1) and matches lost (0). An apparent difference as the KDA is seen as, in the matches lost, we can see that most KDA for players are bunched up at the star (roughly 1 to 5), however, in the matches won, we can see that KDA can vary greatly going up to even 30+
+The above graph showcases the distributions of KDA in matches won (1) and matches lost (0). There is a clear difference in scale and spread of the 2 distributions. We can see that the vast majority of players had a KDA between 0-5 and of those, an overwhelming majority of those players lost. Conversely, we can see that as KDA increased (up to 30+), the players tended to be on the winning team.
 
 ### Damagetochampions analysis:
 <iframe src="assets/DTC.html" width=800 height=600 frameBorder=0></iframe>
 
-As opposed to the first graph (KDA UA), we can see here that the distribution of damagetochampions (DTC) is much more similar here. Despite being another factor in being the best player in a given match, it looks like, regardless of being on the winnning or losing team, players often deal similar amounts of damage to players.
+As opposed to the first graph (KDA UA), we can see here that the distribution of damagetochampions (DTC) is much more similar here. Despite it being a metric that can be skewed by player position and other factors, it looks like, regardless of being on the winnning or losing team, players often deal similar amounts of damage to each other.
 
 ## Bivariate Analysis
 
 ### Damage to Champions and Earned Gold
 <iframe src="assets/DandEG.html" width=800 height=600 frameBorder=0></iframe>
 
-Looking at the DTC and Earned Gold, we can determine that there is indeed a relationship. The above figure showcase a high correlation between DTC and Earned Gold; this is to be expected as players who do more damage are also more likely to have high amounts of gold. 
+Looking at the DTC and Earned Gold, we can determine that there is a positive linear relationship. The above figure showcase a high correlation between DTC and Earned Gold; this is to be expected as players who do more damage tend to earn more gold which in turn allows them to upgrade items and do even more damage.
 
-This further supports our manner for selecting the best player as statistics like this seem to have relationships with one another
+This further supports our formula for determining the best player as statistics like this seem to have relationships with one another
 
 ### Intersting Aggregates
 
@@ -135,7 +135,7 @@ As can be ascertained from the above graph, the p-value was low; as a matter of 
 
 # Conclusion
 
-
+We can thus conclude that the null hypothesis put forth that the best player is equally likely to be on the winning and losing sides in a competitve game of League of Legends cannot be supported by this data.
 
 
 
