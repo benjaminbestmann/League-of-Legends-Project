@@ -32,7 +32,8 @@ The steps we took in cleaning our data consisted of first selecting our relevent
 Firstly, we selected our columns by passing in a list of the columns above. This helped us immensly in pinpointing the exact columns that we needed to answer our question. Once we selected these, we first began by querying out the position of 'team.' This is due to the fact that our particular analysis focuses on individidual performance rather than team effort. Additionally, we also edited the gamelength column by dividing it by 60 to  convert it from seconds to minutes; this was particularly useful in obtaining another column called damagemitigated by multiplying the gamelength column by the damagemitigatedperminute column. Lastly, we replaced all 0.0s with 1s in the deaths column so that we could create a new column called KDA (the Kill, Death, and Assist ratio); KDA serves as an aggregate statistic useful for finding the "best" player on either team. 
 
 ### Cleaned Dataframe (first few rows):
-    NEED TO PUT
+    print(relavent.head().to_markdown(index=False))
+
 
 ## Univariate Analysis
 
