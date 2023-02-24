@@ -111,7 +111,7 @@ By grouping our cleaned data frame by gameid (i.e match), we can utilize a trans
 
 
 We do not believe that any of the columns in our cleaned dataset fall under the criteria of Not Missing at Random. This is defined as columns whose values themselves determine their missingness.
-The columns that do have missingness in our set, namely url, don't have anything specific about them that allows you to determine whether they will be missing or not so we concluded that they are jnot NMAR.
+The columns that do have missingness in our set, namely url, don't have anything specific about them that allows you to determine whether they will be missing or not so we concluded that they are not NMAR.
 
 
 ## Missingness Dependency
