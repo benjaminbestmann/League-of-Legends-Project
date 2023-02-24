@@ -101,7 +101,7 @@ This further supports our formula for determining the best player as statistics 
 
 
 
-By grouping our cleaned data frame by gameid (i.e match), we can utilize a transformation to get the sum of 'gameid','KDA', 'visionscore','earnedgold','damagetochampions', 'total cs', and 'damagemitigated' columns in each row. This helps us in obtaining our aggregate statistic  MVPscore which is a new column obtained by utilizing the grouped df (called match_sums) to turn the rows in the columns mentioned to proportions of their performance per game. Using this, we calculate MVPscore by taking summing 10% of KDA, 20% DTC, 20% Earned Gold, 35% Vision Score, 15% Damage Mitigated, and 10% Total cs.
+By grouping our cleaned data frame by gameid (i.e match), we can utilize a transformation to get the sum of 'gameid','KDA', 'visionscore','earnedgold','damagetochampions', 'total cs', and 'damagemitigated' columns in each row. This helps us in obtaining our aggregate statistic  MVPscore which is a new column obtained by utilizing the grouped df (called match_sums) to turn the rows in the columns mentioned to proportions of their performance per game. Using this, we calculate MVPscore by taking summing 10% of KDA, 20% DTC, 20% Earned Gold, 25% Vision Score, 15% Damage Mitigated, and 10% Total cs.
 
 
 # Assessment of Missingness
@@ -177,15 +177,13 @@ In this case, our hypothesis was:
 - Observed Test Statistic = 0.9412947326095698
 
 
-As can be ascertained from the above graph, the p-value was low; as a matter of fact, it was 0! This means that we can reject the null that the best player is likely to be on either side as our observation (the proportion of the best player being on the winning team) is not consistent with said null.
-
-
+As can be ascertained from the above graph, the p-value was low; as a matter of fact, it was 0! This means that we can reject the null that the best player is likely to be on either side as our observation is not consistent with the hypothesis that the best player is equally likely to be on either the winning or losing side.
 
 
 # Conclusion
 
 
-We can thus conclude that the null hypothesis put forth that the best player is equally likely to be on the winning and losing sides in a competitive game of League of Legends cannot be supported by this data.
+We can thus conclude that the null hypothesis put forth that the best player is equally likely to be on the winning and losing side in a competitive game of League of Legends cannot be supported by this data.
 
 
 
