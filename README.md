@@ -164,7 +164,7 @@ Given that we calculated the MVP score (i.e the MVPscore column), which is the s
 in their match, we performed a hypothesis test to answer our original question: is the best player always on the winning team? We believe this to be an accurate path to answering our question as MVP score takes into account not only things like KDA and damage dealt to other players (DTC), but also game stats like damage mitigated and vision score. This is done in order not to favor champions that specialize in dealing damage and take into account other aspects of being a good well rounded player; this also allows other champions and positions a shot at being the best!
 
 
-We utilized a hypothesis test with a 5% cut-off p-value. The proportion of times that the best player (highest MVP per game) was on the winning side was the test statistic. This is similar to a hypothesis test done on a fair coin with an unfair coin as the observed; in which case, the proportion of the bias is valid.
+We utilized a hypothesis test with a 5% cut-off p-value. The proportion of times that the best player (highest MVP per game) was on the winning side was the test statistic. This is similar to a hypothesis test done on a fair coin with an unfair coin as the observed; in which case the proportion of the bias is valid.
 
 
 In this case, our hypothesis was:
